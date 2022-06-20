@@ -14,9 +14,9 @@ fun main() {
         intArrayOf(13, 15, 14, 0)
     )
 
-    // Solution for this board exists, but it requires many moves (80 moves),
-    // our BFS is not efficient enough to tackle this puzzle and will time out
-    // http://kociemba.org/themen/fifteen/fifteensolver.html
+//     Solution for this board exists, but it requires many moves (80 moves),
+//     our BFS is not efficient enough to tackle this puzzle and will time out
+//     http://kociemba.org/themen/fifteen/fifteensolver.html
     val boardWithSuperFlipSolution = arrayOf(
         intArrayOf(0, 12, 9, 13),
         intArrayOf(15, 11, 10, 14),
@@ -24,10 +24,51 @@ fun main() {
         intArrayOf(4, 8, 6, 1)
     )
 
-    val solution = bfs(State(boardWithSolution))
-//    val solution = bfs(State(boardWithNoSolution))
-//    val solution = bfs(State(boardWithSuperFlipSolution))
+    var choice: String
+    do {
+        println(
+            """
+            0) Simple puzzle with solution (Default)
+            1) Simple puzzle without solution
+            2) Puzzle that requires 80 moves! (practically unsolvable with BFS)
+            3) Custom input
+            Select puzzle to solve. press Enter for Default.
+        """.trimIndent()
+        )
+        choice = readLine()!!
+    } while (choice != "0" && choice != "" && choice != "1" && choice != "2" && choice != "3")
 
+
+    val solution: State?
+
+    when (choice) {
+        "0" -> solution = bfs(State(boardWithSolution))
+        "1" -> solution = bfs(State(boardWithNoSolution))
+        "2" -> solution = bfs(State(boardWithSuperFlipSolution))
+        "3" -> {
+            println(
+                """
+                    Enter custom puzzle, values separated by space
+                    (example of input: 2 0 3 4 5 6 7 8 9 6 10 11 13 14 15 12)
+                """.trimIndent()
+            )
+            try {
+                val c = readLine()!!.split(" ").map { s -> s.toInt() }
+                val customPuzzle = arrayOf(
+                    intArrayOf(c[0], c[1], c[2], c[3]),
+                    intArrayOf(c[4], c[5], c[6], c[7]),
+                    intArrayOf(c[8], c[9], c[10], c[11]),
+                    intArrayOf(c[12], c[13], c[14], c[15])
+                )
+                solution = bfs(State(customPuzzle))
+            } catch (e: Exception) {
+                println("Please enter valid custom puzzle")
+                throw Exception("Invalid custom puzzle")
+            }
+        }
+        else -> solution = bfs(State(boardWithSolution))
+
+    }
 
     if (solution != null) {
         println("Solution Found!")
