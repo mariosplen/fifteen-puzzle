@@ -13,6 +13,15 @@
 Write an algorithm that finds the solution if that exists, by implementing BFS (Breadth-First-Search) algorithm. Using
 any programming language.
 
+
+
+**Table of Contents**
+
+[TOC]
+
+
+
+
 ## State Representation
 
 The states are represented by a 2D array with numbers. The empty tile is represented by the number 0.
@@ -22,11 +31,11 @@ The states are represented by a 2D array with numbers. The empty tile is represe
 
 ## Usage
 
-###1.Compile
+### 1.Compile
 
 `$ kotlinc -include-runtime Main.kt State.kt BFS.kt -d Main.jar`
 
-###2.Run
+### 2.Run
 
 `$ java -jar Main.jar`
 
@@ -42,25 +51,21 @@ Choose one of the modes
 Select puzzle to solve. press Enter for Default.
 ```
 
-####Custom input option
+#### Custom input option
 Input a custom array puzzle in one line, like so:
 
 `$ 2 0 3 4 5 6 7 8 9 6 10 11 13 14 15 12`
 
-####Solution Found Output
+#### Solution Found Output
 
 <img src="https://raw.githubusercontent.com/mariosplen/fifteen-puzzle/master/images/solution_example.png" alt="solution example" width= “10%”/>
 
 
-**Table of Contents**
+## The Code
 
-[TOC]
+### Main.kt
 
-##The Code
-
-###Main.kt
-
-####Example puzzles
+#### Example puzzles
 Here I create 3 arrays as examples that the user can use instead of a custom array.
 
 ```kotlin
@@ -89,7 +94,7 @@ val boardWithMaxMovesSolution = arrayOf(
 )
 ```
 
-####CLI Selection
+#### CLI Selection
 Here I check if the user is going to use one of the example arrays or input his own.
 
 ```kotlin
@@ -145,7 +150,7 @@ when (choice) {
 }
 ```
 
-####Output
+#### Output
 Here I find the path, print the states up until the solution and the moves required to solve the puzzle. I do that by
 making use of the helper functions getPath() , getSolutionStatesString() and getSolutionString() respectively.
 
@@ -161,7 +166,7 @@ if (solution != null) {
 }
 ```
 
-#####getPath()
+##### getPath()
 
 ```kotlin
 private fun getPath(solution: State): Array<State> {
@@ -176,7 +181,7 @@ private fun getPath(solution: State): Array<State> {
 }
 ```
 
-#####getSolutionStatesString()
+##### getSolutionStatesString()
 
 ```kotlin
 private fun getSolutionStatesString(path: Array<State>): String {
@@ -192,7 +197,7 @@ private fun getSolutionStatesString(path: Array<State>): String {
 
 ```
 
-#####getSolutionString()
+##### getSolutionString()
 
 ```kotlin
 private fun getSolutionString(path: Array<State>): String {
@@ -208,8 +213,8 @@ private fun getSolutionString(path: Array<State>): String {
 }
 ```
 
-###State.kt
-####The State class
+### State.kt
+#### The State class
 
 - boardArr is the array puzzle,
 - moveDone is the move done to get to the specific state
@@ -230,7 +235,7 @@ class State(
 
 ```
 
-#####getEmptyBoxIndexes()
+##### getEmptyBoxIndexes()
 Returns the indexes of the empty tile or throws an exception if it doesn't exist
 
 ```kotlin
@@ -246,7 +251,7 @@ private fun getEmptyBoxIndexes(): Pair<Int, Int> {
 }
 ```
 
-####getAllSubStates()
+#### getAllSubStates()
 Returns an ArrayList of all the States that can be produced by all the possible moves of the empty tile of a State
 
 ```kotlin
@@ -299,7 +304,7 @@ fun getAllSubStates(): ArrayList<State> {
 }
 ```
 
-####isGoalState()
+#### isGoalState()
 Creates the Goal State and checks whether our state is equal to the Goal State
 
 ```kotlin
@@ -319,7 +324,7 @@ fun isGoalState(): Boolean {
 }
 ```
 
-####Solvability
+#### Solvability
 Based on [this](https://www.geeksforgeeks.org/check-instance-15-puzzle-solvable/. "this") article we can find out if a
 puzzle is solvable using three parameters, the width of the puzzle the position of the empty tile from the bottom and
 the number of inversions.
