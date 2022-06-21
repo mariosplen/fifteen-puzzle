@@ -370,7 +370,7 @@ fun isSolvable(): Boolean {
 }
 ```
 
-######getEmptyBoxRowFromBottom()
+###### getEmptyBoxRowFromBottom()
 
 ```kotlin
 private fun getEmptyBoxRowFromBottom(): Int {
@@ -386,7 +386,7 @@ private fun getEmptyBoxRowFromBottom(): Int {
 }
 ```
 
-######getInvCount()
+###### getInvCount()
 
 ```kotlin
 private fun getInvCount(): Int {
@@ -407,14 +407,15 @@ private fun getInvCount(): Int {
 }
 ```
 
-####Helper Functions
-#####.copy()
+#### Helper Functions
+
+##### .copy()
 
 ```kotlin
 private fun Array<IntArray>.copy() = Array(size) { get(it).clone() }
 ```
 
-#####toString()
+##### toString()
 
 ```kotlin
 override fun toString(): String {
@@ -430,7 +431,7 @@ override fun toString(): String {
 }
 ```
 
-#####hashCode()
+##### hashCode()
 
 ```kotlin
 override fun hashCode(): Int {
@@ -438,7 +439,7 @@ override fun hashCode(): Int {
 }
 ```
 
-#####equals()
+##### equals()
 
 ```kotlin
 override fun equals(other: Any?): Boolean {
@@ -453,9 +454,12 @@ override fun equals(other: Any?): Boolean {
 }
 ```
 
-###BFS.kt
-####bfs()
-#####This is the Breadth First Search Implementation. I have also included a time-out functionality to it that fires
+### BFS.kt
+
+#### bfs()
+
+##### This is the Breadth First Search Implementation. I have also included a time-out functionality to it that fires
+
 after 15 seconds. I have done this because of the exponential growth of the tree and the fact that there are solutions
 that can take up to 80 moves!.
 

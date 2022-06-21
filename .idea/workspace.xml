@@ -4,12 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e772458e-91c3-4761-a634-093f705177dd" name="Changes" comment="image added">
-      <change afterPath="$PROJECT_DIR$/ReadMe.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/BFS.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/BFS.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Main.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/State.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/State.kt" afterDir="false" />
+    <list default="true" id="e772458e-91c3-4761-a634-093f705177dd" name="Changes" comment="Fixed indentation">
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,7 +122,21 @@
       <option name="project" value="LOCAL" />
       <updated>1655764599243</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="added a README.md and done optimizations">
+      <created>1655771188546</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1655771188546</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Fixed indentation">
+      <created>1655771564693</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1655771564693</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -145,7 +155,9 @@
     <MESSAGE value="added images" />
     <MESSAGE value="added CLI interface" />
     <MESSAGE value="image added" />
-    <option name="LAST_COMMIT_MESSAGE" value="image added" />
+    <MESSAGE value="added a README.md and done optimizations" />
+    <MESSAGE value="Fixed indentation" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed indentation" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
