@@ -13,50 +13,42 @@
 Write an algorithm that finds the solution if that exists, by implementing BFS (Breadth-First-Search) algorithm. Using
 any programming language.
 
-
-
 **Table of Contents**
 
 - [15-Puzzle Game](#15-puzzle-game)
-  * [The Problem](#the-problem)
-  * [State Representation](#state-representation)
-  * [Usage](#usage)
-    + [1.Compile](#1compile)
-    + [2.Run](#2run)
-  * [The Command Line Interface (CLI)](#the-command-line-interface--cli-)
-    - [Custom input option](#custom-input-option)
-    - [Solution Found Output](#solution-found-output)
-  * [The Code](#the-code)
-    + [Main.kt](#mainkt)
-      - [Example puzzles](#example-puzzles)
-      - [CLI Selection](#cli-selection)
-      - [Output](#output)
-        * [getPath()](#getpath--)
-        * [getSolutionStatesString()](#getsolutionstatesstring--)
-        * [getSolutionString()](#getsolutionstring--)
-    + [State.kt](#statekt)
-      - [The State class](#the-state-class)
-        * [getEmptyBoxIndexes()](#getemptyboxindexes--)
-      - [getAllSubStates()](#getallsubstates--)
-      - [isGoalState()](#isgoalstate--)
-      - [Solvability](#solvability)
-        * [isSolvable()](#issolvable--)
-          + [getEmptyBoxRowFromBottom()](#getemptyboxrowfrombottom--)
-          + [getInvCount()](#getinvcount--)
-      - [Helper Functions](#helper-functions)
-        * [.copy()](#copy--)
-        * [toString()](#tostring--)
-        * [hashCode()](#hashcode--)
-        * [equals()](#equals--)
-    + [BFS.kt](#bfskt)
-      - [bfs()](#bfs--)
-        * [This is the Breadth First Search Implementation. I have also included a time-out functionality to it that fires](#this-is-the-breadth-first-search-implementation-i-have-also-included-a-time-out-functionality-to-it-that-fires)
-
-<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
-
-
-
-
+    * [The Problem](#the-problem)
+    * [State Representation](#state-representation)
+    * [Usage](#usage)
+        + [1.Compile](#1compile)
+        + [2.Run](#2run)
+    * [The Command Line Interface (CLI)](#the-command-line-interface--cli-)
+        - [Custom input option](#custom-input-option)
+        - [Solution Found Output](#solution-found-output)
+    * [The Code](#the-code)
+        + [Main.kt](#mainkt)
+            - [Example puzzles](#example-puzzles)
+            - [CLI Selection](#cli-selection)
+            - [Output](#output)
+                * [getPath()](#getpath--)
+                * [getSolutionStatesString()](#getsolutionstatesstring--)
+                * [getSolutionString()](#getsolutionstring--)
+        + [State.kt](#statekt)
+            - [The State class](#the-state-class)
+                * [getEmptyBoxIndexes()](#getemptyboxindexes--)
+            - [getAllSubStates()](#getallsubstates--)
+            - [isGoalState()](#isgoalstate--)
+            - [Solvability](#solvability)
+                * [isSolvable()](#issolvable--)
+                    + [getEmptyBoxRowFromBottom()](#getemptyboxrowfrombottom--)
+                    + [getInvCount()](#getinvcount--)
+            - [Helper Functions](#helper-functions)
+                * [.copy()](#copy--)
+                * [toString()](#tostring--)
+                * [hashCode()](#hashcode--)
+                * [equals()](#equals--)
+        + [BFS.kt](#bfskt)
+            - [bfs()](#bfs--)
+                * [This is the Breadth First Search Implementation. I have also included a time-out functionality to it that fires](#this-is-the-breadth-first-search-implementation-i-have-also-included-a-time-out-functionality-to-it-that-fires)
 
 ## State Representation
 
@@ -88,6 +80,7 @@ Select puzzle to solve. press Enter for Default.
 ```
 
 #### Custom input option
+
 Input a custom array puzzle in one line, like so:
 
 `$ 2 0 3 4 5 6 7 8 9 6 10 11 13 14 15 12`
@@ -96,12 +89,12 @@ Input a custom array puzzle in one line, like so:
 
 <img src="https://raw.githubusercontent.com/mariosplen/fifteen-puzzle/master/images/solution_example.png" alt="solution example" width= “10%”/>
 
-
 ## The Code
 
 ### Main.kt
 
 #### Example puzzles
+
 Here I create 3 arrays as examples that the user can use instead of a custom array.
 
 ```kotlin
@@ -131,6 +124,7 @@ val boardWithMaxMovesSolution = arrayOf(
 ```
 
 #### CLI Selection
+
 Here I check if the user is going to use one of the example arrays or input his own.
 
 ```kotlin
@@ -187,6 +181,7 @@ when (choice) {
 ```
 
 #### Output
+
 Here I find the path, print the states up until the solution and the moves required to solve the puzzle. I do that by
 making use of the helper functions getPath() , getSolutionStatesString() and getSolutionString() respectively.
 
@@ -250,6 +245,7 @@ private fun getSolutionString(path: Array<State>): String {
 ```
 
 ### State.kt
+
 #### The State class
 
 - boardArr is the array puzzle,
@@ -272,6 +268,7 @@ class State(
 ```
 
 ##### getEmptyBoxIndexes()
+
 Returns the indexes of the empty tile or throws an exception if it doesn't exist
 
 ```kotlin
@@ -288,6 +285,7 @@ private fun getEmptyBoxIndexes(): Pair<Int, Int> {
 ```
 
 #### getAllSubStates()
+
 Returns an ArrayList of all the States that can be produced by all the possible moves of the empty tile of a State
 
 ```kotlin
@@ -341,6 +339,7 @@ fun getAllSubStates(): ArrayList<State> {
 ```
 
 #### isGoalState()
+
 Creates the Goal State and checks whether our state is equal to the Goal State
 
 ```kotlin
@@ -361,6 +360,7 @@ fun isGoalState(): Boolean {
 ```
 
 #### Solvability
+
 Based on [this](https://www.geeksforgeeks.org/check-instance-15-puzzle-solvable/. "this") article we can find out if a
 puzzle is solvable using three parameters, the width of the puzzle the position of the empty tile from the bottom and
 the number of inversions.
@@ -499,8 +499,7 @@ override fun equals(other: Any?): Boolean {
 
 #### bfs()
 
-##### This is the Breadth First Search Implementation. I have also included a time-out functionality to it that fires
-
+This is the Breadth First Search Implementation. I have also included a time-out functionality to it that fires
 after 15 seconds. I have done this because of the exponential growth of the tree and the fact that there are solutions
 that can take up to 80 moves!.
 
