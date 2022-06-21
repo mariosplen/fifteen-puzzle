@@ -143,7 +143,7 @@ do {
 } while (choice != "0" && choice != "" && choice != "1" && choice != "2" && choice != "3")
 ```
 
-####Get Solution based on array chosen
+#### Get Solution based on array chosen
 Based on the user's answer, I get the solution of the puzzle if it exists. If the user has entered gibberish or an array
 that is in an invalid form, I throw an exception.
 
@@ -378,7 +378,7 @@ We can find out if a 15-puzzle is solvable by following these rules:
 
 Where N is the width of puzzle and an inversion is defined like so:
 
-#####What is an inversion?
+##### What is an inversion?
 If we assume the tiles written out in a single row (1D Array) instead of being spread in N-rows (2D Array), a pair of
 tiles (a, b) form an inversion if a appears before b but a > b.
 For above example, consider the tiles written out in a row, like this:
