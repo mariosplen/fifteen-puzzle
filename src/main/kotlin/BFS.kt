@@ -3,7 +3,7 @@ import java.util.*
 
 fun bfs(initialState: State): State? {
 
-    // Timeout after 15 seconds
+    // Timeout after 15 seconds.
     val start = System.currentTimeMillis()
     val end = start + 15000
 
@@ -23,7 +23,9 @@ fun bfs(initialState: State): State? {
 
     frontier.add(initialState)
 
-    while (frontier.size > 0 && System.currentTimeMillis() < end) {
+    // Because we already know that a solution exists the condition while(frontier.size > 0) is redundant. I Instead
+    // replace it with while(System.currentTimeMillis() < end) so the search will time out after 15 seconds, ignoring very big solutions.
+    while (System.currentTimeMillis() < end) {
 
         currentState = frontier.poll()
 

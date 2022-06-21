@@ -15,8 +15,8 @@ fun main() {
     )
 
 //     Solution for this board exists, but it requires many moves (80 moves),
-//     our BFS is not efficient enough to tackle this puzzle and will time out
-//     http://kociemba.org/themen/fifteen/fifteensolver.html
+//     Our BFS is not efficient enough to tackle this puzzle and will time out.
+//     http://kociemba.org/themen/fifteen/fifteensolver.html.
     val boardWithMaxMovesSolution = arrayOf(
         intArrayOf(0, 12, 9, 13),
         intArrayOf(15, 11, 10, 14),

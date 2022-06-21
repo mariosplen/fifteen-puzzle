@@ -6,12 +6,12 @@
 > vertically, respectively. The goal of the puzzle is to place the tiles in numerical
 > order.[[1]](https://en.wikipedia.org/wiki/15_puzzle)
 
-<img src="https://raw.githubusercontent.com/mariosplen/fifteen-puzzle/master/images/puzzle.png" alt="15-Puzzle" width= “100%”/>
+<img src="images/puzzle.png" alt="15-Puzzle" width= “100%”/>
 
 ## The Problem
 
-Write an algorithm that finds the solution if that exists, by implementing BFS (Breadth-First-Search) algorithm. Using
-any programming language.
+Write an algorithm that finds the solution to the puzzle. Implement the BFS (Breadth-First-Search) algorithm using
+any programming language. If no solution exists output a message stating that.
 
 **Table of Contents**
 
@@ -54,8 +54,8 @@ any programming language.
 
 The states are represented by a 2D array with numbers. The empty tile is represented by the number 0.
 
-<img src="https://raw.githubusercontent.com/mariosplen/fifteen-puzzle/master/images/init_state1.png" alt="state example" width= “100%”/>
-> Example State
+<img src="images/state_example.png" alt="state example" width= “100%”/>
+> An example of a state.
 
 ## Usage
 
@@ -69,25 +69,20 @@ The states are represented by a 2D array with numbers. The empty tile is represe
 
 ## The Command Line Interface (CLI)
 
-Choose one of the modes
+Choose one of the modes.
 
-```
-0) Simple puzzle with solution (Default)
-1) Simple puzzle without solution
-2) Puzzle that requires 80 moves! (practically unsolvable with BFS)
-3) Custom input
-Select puzzle to solve. press Enter for Default.
-```
+<img src="images/CLI_options.png" alt="solution example" width= “10%”/>
 
 #### Custom input option
 
-Input a custom array puzzle in one line, like so:
+If you have chosen to use a custom puzzle, type your array puzzle in one line, with the elements separated by space like
+so:
 
 `$ 2 0 3 4 5 6 7 8 9 6 10 11 13 14 15 12`
 
 #### Solution Found Output
 
-<img src="https://raw.githubusercontent.com/mariosplen/fifteen-puzzle/master/images/solution_example.png" alt="solution example" width= “10%”/>
+<img src="images/solution_example.png" alt="solution example" width= “10%”/>
 
 ## The Code
 
@@ -144,6 +139,7 @@ do {
 ```
 
 #### Get Solution based on array chosen
+
 Based on the user's answer, I get the solution of the puzzle if it exists. If the user has entered gibberish or an array
 that is in an invalid form, I throw an exception.
 
@@ -254,7 +250,7 @@ private fun getSolutionString(path: Array<State>): String {
 - emptyBoxIndexes is a Pair that represents the indexes of the empty tile in the array and are located by the helper
   function getEmptyBoxIndexes()
 
-The root state has always moveDone and parent = null
+The root state has always moveDone and parent = null.
 
 ```kotlin
 class State(
@@ -269,7 +265,7 @@ class State(
 
 ##### getEmptyBoxIndexes()
 
-Returns the indexes of the empty tile or throws an exception if it doesn't exist
+Returns the indexes of the empty tile or throws an exception if it doesn't exist.
 
 ```kotlin
 private fun getEmptyBoxIndexes(): Pair<Int, Int> {
@@ -286,7 +282,7 @@ private fun getEmptyBoxIndexes(): Pair<Int, Int> {
 
 #### getAllSubStates()
 
-Returns an ArrayList of all the States that can be produced by all the possible moves of the empty tile of a State
+Returns an ArrayList of all the States that can be produced by all the possible moves of the empty tile of a State.
 
 ```kotlin
 fun getAllSubStates(): ArrayList<State> {
@@ -340,7 +336,7 @@ fun getAllSubStates(): ArrayList<State> {
 
 #### isGoalState()
 
-Creates the Goal State and checks whether our state is equal to the Goal State
+Creates the Goal State and checks whether our state is equal to the Goal State.
 
 ```kotlin
 fun isGoalState(): Boolean {
@@ -379,6 +375,7 @@ We can find out if a 15-puzzle is solvable by following these rules:
 Where N is the width of puzzle and an inversion is defined like so:
 
 ##### What is an inversion?
+
 If we assume the tiles written out in a single row (1D Array) instead of being spread in N-rows (2D Array), a pair of
 tiles (a, b) form an inversion if a appears before b but a > b.
 For above example, consider the tiles written out in a row, like this:
@@ -387,10 +384,11 @@ The above grid forms only 1 inversion i.e. (2, 1).
 
 for more examples and illustrations
 visit [How to check if an instance of 15 puzzle is solvable?](https://www.geeksforgeeks.org/check-instance-15-puzzle-solvable/ "How to check if an instance of 15 puzzle is solvable?")
+.
 
 ##### isSolvable()
 
-Applies the rules discussed above and returns true if the state is solvable
+Applies the rules discussed above and returns true if the state is solvable.
 
 ```kotlin
 fun isSolvable(): Boolean {
