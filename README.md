@@ -17,7 +17,43 @@ any programming language.
 
 **Table of Contents**
 
-[TOC]
+- [15-Puzzle Game](#15-puzzle-game)
+  * [The Problem](#the-problem)
+  * [State Representation](#state-representation)
+  * [Usage](#usage)
+    + [1.Compile](#1compile)
+    + [2.Run](#2run)
+  * [The Command Line Interface (CLI)](#the-command-line-interface--cli-)
+    - [Custom input option](#custom-input-option)
+    - [Solution Found Output](#solution-found-output)
+  * [The Code](#the-code)
+    + [Main.kt](#mainkt)
+      - [Example puzzles](#example-puzzles)
+      - [CLI Selection](#cli-selection)
+      - [Output](#output)
+        * [getPath()](#getpath--)
+        * [getSolutionStatesString()](#getsolutionstatesstring--)
+        * [getSolutionString()](#getsolutionstring--)
+    + [State.kt](#statekt)
+      - [The State class](#the-state-class)
+        * [getEmptyBoxIndexes()](#getemptyboxindexes--)
+      - [getAllSubStates()](#getallsubstates--)
+      - [isGoalState()](#isgoalstate--)
+      - [Solvability](#solvability)
+        * [isSolvable()](#issolvable--)
+          + [getEmptyBoxRowFromBottom()](#getemptyboxrowfrombottom--)
+          + [getInvCount()](#getinvcount--)
+      - [Helper Functions](#helper-functions)
+        * [.copy()](#copy--)
+        * [toString()](#tostring--)
+        * [hashCode()](#hashcode--)
+        * [equals()](#equals--)
+    + [BFS.kt](#bfskt)
+      - [bfs()](#bfs--)
+        * [This is the Breadth First Search Implementation. I have also included a time-out functionality to it that fires](#this-is-the-breadth-first-search-implementation-i-have-also-included-a-time-out-functionality-to-it-that-fires)
+
+<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
+
 
 
 
