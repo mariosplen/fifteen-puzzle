@@ -64,7 +64,7 @@ Input a custom array puzzle in one line, like so:
 Here I create 3 arrays as examples that the user can use instead of a custom array.
 
 ```kotlin
-    val boardWithSolution = arrayOf(
+val boardWithSolution = arrayOf(
     intArrayOf(2, 0, 3, 4),
     intArrayOf(1, 5, 7, 8),
     intArrayOf(9, 6, 10, 11),
@@ -113,7 +113,7 @@ Based on the user's answer, I get the solution of the puzzle if it exists. If th
 that is in an invalid form, I throw an exception.
 
 ```kotlin
-   val solution: State?
+val solution: State?
 
 when (choice) {
     "0" -> solution = bfs(State(boardWithSolution))
@@ -234,7 +234,7 @@ class State(
 Returns the indexes of the empty tile or throws an exception if it doesn't exist
 
 ```kotlin
-    private fun getEmptyBoxIndexes(): Pair<Int, Int> {
+private fun getEmptyBoxIndexes(): Pair<Int, Int> {
     for (i in boardArr.indices) {
         for (j in boardArr[i].indices) {
             if (boardArr[i][j] == 0) {
@@ -250,7 +250,7 @@ Returns the indexes of the empty tile or throws an exception if it doesn't exist
 Returns an ArrayList of all the States that can be produced by all the possible moves of the empty tile of a State
 
 ```kotlin
-    fun getAllSubStates(): ArrayList<State> {
+fun getAllSubStates(): ArrayList<State> {
 
     val subStates: ArrayList<State> = ArrayList()
     var newBoardArr: Array<IntArray>
@@ -303,7 +303,7 @@ Returns an ArrayList of all the States that can be produced by all the possible 
 Creates the Goal State and checks whether our state is equal to the Goal State
 
 ```kotlin
-    fun isGoalState(): Boolean {
+fun isGoalState(): Boolean {
 
     // Goal board array.
     val goalBoardArr = arrayOf(
@@ -373,7 +373,7 @@ fun isSolvable(): Boolean {
 ######getEmptyBoxRowFromBottom()
 
 ```kotlin
-    private fun getEmptyBoxRowFromBottom(): Int {
+private fun getEmptyBoxRowFromBottom(): Int {
 
     for (i in boardArr.reversedArray().indices) {
         for (j in boardArr[i].reversedArray().indices) {
@@ -389,7 +389,7 @@ fun isSolvable(): Boolean {
 ######getInvCount()
 
 ```kotlin
-    private fun getInvCount(): Int {
+private fun getInvCount(): Int {
 
     // Flatten boardArr to 1d array.
     val arr = boardArr.flatMap { obj -> obj.toList() }.toTypedArray()
@@ -411,13 +411,13 @@ fun isSolvable(): Boolean {
 #####.copy()
 
 ```kotlin
-    private fun Array<IntArray>.copy() = Array(size) { get(it).clone() }
+private fun Array<IntArray>.copy() = Array(size) { get(it).clone() }
 ```
 
 #####toString()
 
 ```kotlin
-    override fun toString(): String {
+override fun toString(): String {
     val buffer = StringBuilder()
 
     for (r in boardArr) {
@@ -433,7 +433,7 @@ fun isSolvable(): Boolean {
 #####hashCode()
 
 ```kotlin
-    override fun hashCode(): Int {
+override fun hashCode(): Int {
     return boardArr.contentDeepHashCode()
 }
 ```
@@ -441,7 +441,7 @@ fun isSolvable(): Boolean {
 #####equals()
 
 ```kotlin
-    override fun equals(other: Any?): Boolean {
+override fun equals(other: Any?): Boolean {
     if (this === other) return true
     if (javaClass != other?.javaClass) return false
 
