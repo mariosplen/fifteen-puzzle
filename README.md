@@ -37,7 +37,7 @@ any programming language.
                 * [getEmptyBoxIndexes()](#getemptyboxindexes--)
             - [getAllSubStates()](#getallsubstates--)
             - [isGoalState()](#isgoalstate--)
-            - [Solvability](#solvability)
+            - [Solvatibility](#solvatibility)
                 * [isSolvable()](#issolvable--)
                     + [getEmptyBoxRowFromBottom()](#getemptyboxrowfrombottom--)
                     + [getInvCount()](#getinvcount--)
@@ -359,7 +359,7 @@ fun isGoalState(): Boolean {
 }
 ```
 
-#### Solvability
+#### Solvatibility
 
 Based on [this](https://www.geeksforgeeks.org/check-instance-15-puzzle-solvable/. "this") article we can find out if a
 puzzle is solvable using three parameters, the width of the puzzle the position of the empty tile from the bottom and
