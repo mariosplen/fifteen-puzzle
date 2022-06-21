@@ -11,7 +11,7 @@
 ## The Problem
 
 Write an algorithm that finds the solution to the puzzle. Implement the BFS (Breadth-First-Search) algorithm using
-any programming language. If no solution exists output a message stating that.
+any programming language. If no solution exists output a message stating it.
 
 **Table of Contents**
 
@@ -90,7 +90,7 @@ so:
 
 #### Example puzzles
 
-Here I create 3 arrays as examples that the user can use instead of a custom array.
+Here I create 3 arrays as examples that the user can use instead of a custom array. (Options 1, 2 and 3 from the CLI).
 
 ```kotlin
 val boardWithSolution = arrayOf(
