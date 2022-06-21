@@ -17,7 +17,7 @@ fun main() {
 //     Solution for this board exists, but it requires many moves (80 moves),
 //     our BFS is not efficient enough to tackle this puzzle and will time out
 //     http://kociemba.org/themen/fifteen/fifteensolver.html
-    val boardWithSuperFlipSolution = arrayOf(
+    val boardWithMaxMovesSolution = arrayOf(
         intArrayOf(0, 12, 9, 13),
         intArrayOf(15, 11, 10, 14),
         intArrayOf(3, 7, 2, 5),
@@ -44,7 +44,7 @@ fun main() {
     when (choice) {
         "0" -> solution = bfs(State(boardWithSolution))
         "1" -> solution = bfs(State(boardWithNoSolution))
-        "2" -> solution = bfs(State(boardWithSuperFlipSolution))
+        "2" -> solution = bfs(State(boardWithMaxMovesSolution))
         "3" -> {
             println(
                 """

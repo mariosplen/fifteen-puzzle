@@ -1,6 +1,5 @@
 class State(
     private val boardArr: Array<IntArray>,
-    private var depth: Int = 0,
     internal val moveDone: String? = null,
     internal val parent: State? = null
 ) {
@@ -26,43 +25,43 @@ class State(
         var newBoardArr: Array<IntArray>
 
         // Empty box moves up.
-        if (emptyBoxIndexes.first != 0) {
+        if (emptyBoxIndexes.first != 0) { // Check if empty box can move up.
             newBoardArr = boardArr.copy()
             newBoardArr[emptyBoxIndexes.first][emptyBoxIndexes.second] =
                 newBoardArr[emptyBoxIndexes.first - 1][emptyBoxIndexes.second]
             newBoardArr[emptyBoxIndexes.first - 1][emptyBoxIndexes.second] = 0
 
-            subStates.add(State(newBoardArr, depth + 1, "up", this))
+            subStates.add(State(newBoardArr, "up", this))
         }
 
         // Empty box moves down.
-        if (emptyBoxIndexes.first != 3) {
+        if (emptyBoxIndexes.first != 3) { // Check if empty box can move down.
             newBoardArr = boardArr.copy()
             newBoardArr[emptyBoxIndexes.first][emptyBoxIndexes.second] =
                 newBoardArr[emptyBoxIndexes.first + 1][emptyBoxIndexes.second]
             newBoardArr[emptyBoxIndexes.first + 1][emptyBoxIndexes.second] = 0
 
-            subStates.add(State(newBoardArr, depth + 1, "down", this))
+            subStates.add(State(newBoardArr, "down", this))
         }
 
         // Empty box moves left.
-        if (emptyBoxIndexes.second != 0) {
+        if (emptyBoxIndexes.second != 0) {// Check if empty box can move left.
             newBoardArr = boardArr.copy()
             newBoardArr[emptyBoxIndexes.first][emptyBoxIndexes.second] =
                 newBoardArr[emptyBoxIndexes.first][emptyBoxIndexes.second - 1]
             newBoardArr[emptyBoxIndexes.first][emptyBoxIndexes.second - 1] = 0
 
-            subStates.add(State(newBoardArr, depth + 1, "left", this))
+            subStates.add(State(newBoardArr, "left", this))
         }
 
         // Empty box moves right.
-        if (emptyBoxIndexes.second != 3) {
+        if (emptyBoxIndexes.second != 3) {// Check if empty box can move right.
             newBoardArr = boardArr.copy()
             newBoardArr[emptyBoxIndexes.first][emptyBoxIndexes.second] =
                 newBoardArr[emptyBoxIndexes.first][emptyBoxIndexes.second + 1]
             newBoardArr[emptyBoxIndexes.first][emptyBoxIndexes.second + 1] = 0
 
-            subStates.add(State(newBoardArr, depth + 1, "right", this))
+            subStates.add(State(newBoardArr, "right", this))
         }
 
         return subStates

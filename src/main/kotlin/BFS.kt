@@ -40,11 +40,6 @@ fun bfs(initialState: State): State? {
             }
             frontier.add(state)
 
-            // Lengths of all possible optimal solutions range from 0 to 80, so we can prune the others.
-            // https://en.wikipedia.org/wiki/15_puzzle.
-            // Practically useless,because we will never reach that solution with BFS.
-            // Our code will time out before any pruning happens.
-            //           frontier.removeIf { it.depth > 81 }
         }
 
     }
