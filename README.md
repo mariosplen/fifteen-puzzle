@@ -13,6 +13,9 @@
 Write an algorithm that finds the solution to the puzzle. Implement the BFS (Breadth-First-Search) algorithm using
 any programming language. If no solution exists output a message stating it.
 
+* auto-gen TOC:
+{:toc}
+
 **Table of Contents**
 
 - [15-Puzzle Game](#15-puzzle-game)
