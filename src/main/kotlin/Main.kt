@@ -49,7 +49,7 @@ fun main() {
             println(
                 """
                     Enter custom puzzle, values separated by space
-                    (example of input: 2 0 3 4 5 6 7 8 9 6 10 11 13 14 15 12)
+                    (example of input: 2 0 3 4 1 5 7 8 9 6 10 11 13 14 15 12)
                 """.trimIndent()
             )
             try {

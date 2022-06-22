@@ -13,6 +13,7 @@
 Write an algorithm that finds the solution to the puzzle. Implement the BFS (Breadth-First-Search) algorithm using
 any programming language. If no solution exists output a message stating it.
 
+
 **Table of Contents**
 
 - [15-Puzzle Game](#15-puzzle-game)
@@ -21,7 +22,7 @@ any programming language. If no solution exists output a message stating it.
     * [Usage](#usage)
         + [1.Compile](#1compile)
         + [2.Run](#2run)
-    * [The Command Line Interface (CLI)](#the-command-line-interface--cli-)
+    * [The Command Line Interface (CLI)](#the-command-line-interface-cli)
         - [Custom input option](#custom-input-option)
         - [Solution Found Output](#solution-found-output)
     * [The Code](#the-code)
@@ -29,25 +30,25 @@ any programming language. If no solution exists output a message stating it.
             - [Example puzzles](#example-puzzles)
             - [CLI Selection](#cli-selection)
             - [Output](#output)
-                * [getPath()](#getpath--)
-                * [getSolutionStatesString()](#getsolutionstatesstring--)
-                * [getSolutionString()](#getsolutionstring--)
+                * [getPath()](#getpath)
+                * [getSolutionStatesString()](#getsolutionstatesstring)
+                * [getSolutionString()](#getsolutionstring)
         + [State.kt](#statekt)
             - [The State class](#the-state-class)
-                * [getEmptyBoxIndexes()](#getemptyboxindexes--)
-            - [getAllSubStates()](#getallsubstates--)
-            - [isGoalState()](#isgoalstate--)
+                * [getEmptyBoxIndexes()](#getemptyboxindexes)
+            - [getAllSubStates()](#getallsubstates)
+            - [isGoalState()](#isgoalstate)
             - [Solvatibility](#solvatibility)
-                * [isSolvable()](#issolvable--)
-                    + [getEmptyBoxRowFromBottom()](#getemptyboxrowfrombottom--)
-                    + [getInvCount()](#getinvcount--)
+                * [isSolvable()](#issolvable)
+                    + [getEmptyBoxRowFromBottom()](#getemptyboxrowfrombottom)
+                    + [getInvCount()](#getinvcount)
             - [Helper Functions](#helper-functions)
-                * [.copy()](#copy--)
-                * [toString()](#tostring--)
-                * [hashCode()](#hashcode--)
-                * [equals()](#equals--)
+                * [.copy()](#copy)
+                * [toString()](#tostring)
+                * [hashCode()](#hashcode)
+                * [equals()](#equals)
         + [BFS.kt](#bfskt)
-            - [bfs()](#bfs--)
+            - [bfs()](#bfs)
                 * [This is the Breadth First Search Implementation. I have also included a time-out functionality to it that fires](#this-is-the-breadth-first-search-implementation-i-have-also-included-a-time-out-functionality-to-it-that-fires)
 
 ## State Representation
@@ -78,7 +79,7 @@ Choose one of the modes.
 If you have chosen to use a custom puzzle, type your array puzzle in one line, with the elements separated by space like
 so:
 
-`$ 2 0 3 4 5 6 7 8 9 6 10 11 13 14 15 12`
+`2 0 3 4 1 5 7 8 9 6 10 11 13 14 15 12`
 
 #### Solution Found Output
 
@@ -379,7 +380,7 @@ Where N is the width of puzzle and an inversion is defined like so:
 If we assume the tiles written out in a single row (1D Array) instead of being spread in N-rows (2D Array), a pair of
 tiles (a, b) form an inversion if a appears before b but a > b.
 For above example, consider the tiles written out in a row, like this:
-2 1 3 4 5 6 7 8 9 10 11 12 13 14 15 X
+2 1 3 4 5 6 7 8 9 10 11 12 13 14 15 0
 The above grid forms only 1 inversion i.e. (2, 1).
 
 for more examples and illustrations
