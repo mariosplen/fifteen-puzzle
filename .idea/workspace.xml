@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e772458e-91c3-4761-a634-093f705177dd" name="Changes" comment="change in BFS condition">
+    <list default="true" id="e772458e-91c3-4761-a634-093f705177dd" name="Changes" comment="typos">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Main.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -199,7 +201,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655817959373</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="typos">
+      <created>1655896682059</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1655896682059</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -221,9 +230,9 @@
     <MESSAGE value="added a README.md and done optimizations" />
     <MESSAGE value="Fixed indentation" />
     <MESSAGE value="typo" />
-    <MESSAGE value="typos" />
     <MESSAGE value="change in BFS condition" />
-    <option name="LAST_COMMIT_MESSAGE" value="change in BFS condition" />
+    <MESSAGE value="typos" />
+    <option name="LAST_COMMIT_MESSAGE" value="typos" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
