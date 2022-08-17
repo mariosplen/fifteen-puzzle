@@ -49,7 +49,6 @@ any programming language. If no solution exists output a message stating it.
                 * [equals()](#equals)
         + [BFS.kt](#bfskt)
             - [bfs()](#bfs)
-                * [This is the Breadth First Search Implementation. I have also included a time-out functionality to it that fires](#this-is-the-breadth-first-search-implementation-i-have-also-included-a-time-out-functionality-to-it-that-fires)
 
 ## State Representation
 
